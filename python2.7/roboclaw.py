@@ -2,11 +2,11 @@ import serial
 import struct
 
 class Controller:
-    def __init__(self):
+    def __init__(self, ttyStr):
         # Open the command self.port
         #Rasberry Pi/Linux Serial instance example
         self.checksum = 0
-        self.port = serial.Serial("/dev/ttyACM2", baudrate=115200, timeout=0.1)
+        self.port = serial.Serial(ttyStr, baudrate=115200, timeout=0.1)
 
     # Cleanup by closing USB serial self.port
     def close(self):
